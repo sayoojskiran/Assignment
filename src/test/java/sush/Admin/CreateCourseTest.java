@@ -1,5 +1,7 @@
 package sush.Admin;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -27,6 +29,8 @@ public class CreateCourseTest extends BaseClass {
 	public static AddNewQuiz addNewQuiz;
 	public static EditQuiz editQuiz;
 	public static AddRandomQuestion addRandomQuestion;
+	
+	public static Logger log = LogManager.getLogger(BaseClass.class.getName());
 
 	@BeforeTest
 	public void launchBrowser() {
@@ -102,7 +106,10 @@ public class CreateCourseTest extends BaseClass {
 	}
 
 	public static void errorMessage() {
+		log.fatal("Error message came unexpectedly");
+		
 		if (driver.getTitle().equalsIgnoreCase("Error")) {
+			log.fatal("Error message came unexpectedly");
 			errorMessagePage = new ErrorMessagePage(driver);
 			errorMessagePage.continueBtn().click();
 			errorMessagePage.imageIcon().click();

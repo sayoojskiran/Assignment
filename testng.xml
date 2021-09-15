@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Admin">
+		<classes>
+			<class name="sush.Admin.DeleteUser" />
+			<class name="sush.Admin.CreateUser" />
+			<class name="sush.Admin.CreateCourseTest" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="User">
+		<classes>
+			<class name="sush.User.BadgesAndFeedback" />
+			<!--class name="sush.User.Certificate" -->
+			<class name="sush.User.UpdateUserProfile" />
+			<class name="sush.User.EnrollCourse" />
+			<!--class name="sush.User.AttemptQuiz" -->
+		</classes>
+	</test>
+</suite> <!-- Suite -->

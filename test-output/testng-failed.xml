@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sush.User.EnrollCourse">
+      <class name="sush.Admin.CreateCourseTest">
         <methods>
-          <include name="tearDown"/>
           <include name="launchBrowser"/>
-          <include name="enroll"/>
+          <include name="createCourse"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- sush.User.EnrollCourse -->
+      </class> <!-- sush.Admin.CreateCourseTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

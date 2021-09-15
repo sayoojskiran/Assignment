@@ -24,14 +24,12 @@ public class UpdateUserProfile extends BaseClass {
 
 	@Test(priority = 1)
 	public void checkLogin() {
-		String actultitle = driver.getTitle();
-		String searchPageTitle = "Qualicoach: Administration: Search";
-		if (!(actultitle.equalsIgnoreCase(searchPageTitle))) {
-			LoginPage loginPage = new LoginPage(driver);
-			loginPage.getUsername().sendKeys(prop.getProperty("studentUsername"));
-			loginPage.getPassword().sendKeys(prop.getProperty("studentPass"));
-			loginPage.loginBtn().click();
-		}
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getUsername().sendKeys(prop.getProperty("studentUsername"));
+		loginPage.getPassword().sendKeys(prop.getProperty("studentPass"));
+		loginPage.loginBtn().click();
+
 	}
 
 	@Test(priority = 2)
@@ -62,7 +60,7 @@ public class UpdateUserProfile extends BaseClass {
 		stdEdit.getSubmitButton().click();
 
 	}
-	
+
 	@AfterTest
 	public void tearDown() {
 		driver.close();
